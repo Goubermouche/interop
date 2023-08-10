@@ -7,14 +7,14 @@ project "test_project"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++latest"
-
     location "test_project"
-
-    targetdir ("bin/%{cfg.buildcfg}/%{prj.name}")
-    objdir ("bin-int/%{cfg.buildcfg}/%{prj.name}")
 
     files
     {
-        "compiler/source/**.*",
-        "compiler/main.cpp"
+        "test_project/main.cpp"
     }
+
+    filter { "system:linux", "action:gmake" }
+        buildoptions { 
+            "-std=c++23"
+        }
