@@ -12,3 +12,9 @@ project "test_project"
 
     targetdir ("bin/%{cfg.buildcfg}/%{prj.name}")
     objdir ("bin-int/%{cfg.buildcfg}/%{prj.name}")
+
+    files
+    {
+        "compiler/source/**.*",
+        "compiler/main.cpp"
+    }
